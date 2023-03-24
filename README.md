@@ -4,7 +4,7 @@
 
 Стек технологий
     
-    python == 3.10
+    python==3.10
     Django==4.1.7
     Postgres
 
