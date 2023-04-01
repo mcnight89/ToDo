@@ -8,7 +8,7 @@ services:
       POSTGRES_DB: ${POSTGRES_DB}
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
     volumes:
-      - ToDo_data:/var/lib/postgresql/data
+      - ToDo2_data:/var/lib/postgresql/data
     healthcheck:
       test: pg_isready -U ${POSTGRES_USER} -d ${POSTGRES_DB}
       timeout: 3s
@@ -16,7 +16,7 @@ services:
       interval: 3s
 
   api:
-    image: alex85doronin/todo:latest
+    image: ptokarev/todo:latest
     env_file: .env
     depends_on:
       db:
@@ -41,5 +41,5 @@ services:
       - ./nginx.conf:/etc/nginx/conf.d/default.conf
 
 volumes:
-  ToDo_data:
+  ToDo2_data:
   django_static:
