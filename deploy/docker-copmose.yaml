@@ -23,7 +23,7 @@ services:
         condition: service_healthy
 
   collect_static:
-    image: alex85doronin/todo:latest
+    image: ptokarev/todo:latest
     env_file: .env
     entrypoint: ' '
     volumes:
