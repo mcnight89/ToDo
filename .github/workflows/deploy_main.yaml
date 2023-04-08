@@ -44,10 +44,9 @@ jobs:
           username: ${{ secrets.SERVER_USER }}
           password: ${{ secrets.SERVER_PASSWORD }}
           script: |
-            sudo su -S 123465
             cd todo
-            docker-compose pull
-            docker-compose up -d
+            echo ${{ secrets.SERVER_PASSWORD }} | sudo -S docker-compose pull
+            echo ${{ secrets.SERVER_PASSWORD }} | sudo -S docker-compose up -d
         name: Cleanup after deploy
         if: always()
       - uses: appleboy/ssh-action@master
