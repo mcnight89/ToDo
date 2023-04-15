@@ -31,6 +31,7 @@ services:
     volumes:
       - ./core:/opt/core/
       - ./ToDo:/opt/ToDo/
+      - django_static:/opt/static/
 
 
   frontend:
@@ -47,5 +48,6 @@ services:
 
 volumes:
   ToDo_data:
+  django_static:
 
 
